@@ -1,5 +1,7 @@
 package secondTier;
 
+
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class Smartphone.
@@ -7,20 +9,25 @@ package secondTier;
 public class Smartphone extends Electronics{
 	
 
-	/** The Year of release. */
 	private String modelName, OperatingSystem, YearOfRelease;
-	//constructors
-	/**
-	 * Instantiates a new smartphone.
-	 * @param string 
-	 */
-	public Smartphone (String sN){
+
+	public Smartphone ( String mNu, String bN, int pr, int st, String mNa, String OS, String YoR){
+		super ( mNu, bN , pr, st);
+		modelName = mNa;
+		OperatingSystem = OS;
+		YearOfRelease = YoR;
+	}
+	
+	public Smartphone (String mNu){
 	super ();
+	ModelNumber = mNu;
 	modelName = null;
 	OperatingSystem = null;
 	YearOfRelease = null;
 	}
 	
+
+
 	public Smartphone (){
 		super ();
 		modelName = null;
@@ -40,13 +47,7 @@ public class Smartphone extends Electronics{
 	 * @param OS the os
 	 * @param YoR the yo r
 	 */
-	public Smartphone (String bN, String mNu, int pr, int st, String mNa, String OS, String YoR){
-		super (bN, mNu, pr, st);
-		modelName = mNa;
-		OperatingSystem = OS;
-		YearOfRelease = YoR;
-	}
-	
+
 	/**
 	 * Gets the model name.
 	 *
@@ -101,9 +102,14 @@ public class Smartphone extends Electronics{
 		YearOfRelease = YoR;
 	}
 	
-	/* (non-Javadoc)
-	 * @see secondTier.Electronics#toString()
-	 */
+	public boolean equals (Electronics e) {
+		boolean same = false;
+		if (this.compareTo (e) == 0) {
+			same = true;
+		}
+		return same;
+	}
+
 
 	@Override
 	public int compareTo (Electronics e) throws ClassCastException {
@@ -117,6 +123,9 @@ public class Smartphone extends Electronics{
 	}
 	return compareVal;
 	}
+	
+
+
 }
 
 	

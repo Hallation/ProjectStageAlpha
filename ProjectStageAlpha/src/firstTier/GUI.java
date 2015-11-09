@@ -174,8 +174,9 @@ public class GUI {
 							}
 							break;
 				case 2: // find single Smartphone's details
-							String modelNumber = JOptionPane.showInputDialog (null, "What is the Smartphone's Number?", "Smartphone Enquiry", JOptionPane.INFORMATION_MESSAGE);
-							int index = Electronics.find (new Smartphone (modelNumber.trim())); // object created with SmartphoneNumber only
+							String ModelNumber = JOptionPane.showInputDialog (null, "What is the Smartphone's Number?", "Smartphone Enquiry", JOptionPane.INFORMATION_MESSAGE);
+							int index = Electronics.find (new Smartphone (ModelNumber.trim())); // object created with ModelNumber only
+							JOptionPane.showMessageDialog(null, ModelNumber);
 							if (index < 0) { // not found
 								JOptionPane.showMessageDialog (null, "Smartphone not found - please check Smartphone Number", "Not Found", JOptionPane.INFORMATION_MESSAGE);
 							} else { // found
@@ -183,8 +184,8 @@ public class GUI {
 							}
 							break;
 				case 3: // find single Television's details
-							modelNumber = JOptionPane.showInputDialog (null, "What is the Television's model Number?", "Television Enquiry", JOptionPane.INFORMATION_MESSAGE);
-							index = Electronics.find (new Television (modelNumber.trim())); // object created with TelevisionNumber only
+							ModelNumber = JOptionPane.showInputDialog (null, "What is the Television's model Number?", "Television Enquiry", JOptionPane.INFORMATION_MESSAGE);
+							index = Electronics.find (new Television (ModelNumber.trim())); // object created with TelevisionNumber only
 							if (index < 0) { // not found
 								JOptionPane.showMessageDialog (null, "Television not found - please check Television Number", "Not Found", JOptionPane.INFORMATION_MESSAGE);
 							} else { // found
@@ -192,10 +193,10 @@ public class GUI {
 							}
 							break;
 				case 4: // delete an Smartphone
-							modelNumber = JOptionPane.showInputDialog (null, "What is the Smartphone's Number?", "Smartphone Enquiry", JOptionPane.INFORMATION_MESSAGE);
-							JOptionPane.showMessageDialog(null, modelNumber.trim());
+							ModelNumber = JOptionPane.showInputDialog (null, "What is the Smartphone's Number?", "Smartphone Enquiry", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, ModelNumber.trim());
 							try {
-								Smartphone sp = (Smartphone) Electronics.delete (new Smartphone (modelNumber.trim()));
+								Smartphone sp = (Smartphone) Electronics.delete (new Smartphone (ModelNumber.trim()));
 								int response = JOptionPane.showConfirmDialog (null, e + "\nAre you sure you wish to delete this record?\n", "Confirm Delete?", JOptionPane.YES_NO_OPTION);
 								if (response == JOptionPane.YES_OPTION) {
 									try {
@@ -218,9 +219,9 @@ public class GUI {
 							}
 							break;
 				case 5: // delete a Television
-							modelNumber = JOptionPane.showInputDialog (null, "What is the Television's Number?", "Television Enquiry", JOptionPane.INFORMATION_MESSAGE);
+							ModelNumber = JOptionPane.showInputDialog (null, "What is the Television's Number?", "Television Enquiry", JOptionPane.INFORMATION_MESSAGE);
 							try {
-								Television t = (Television) Electronics.delete (new Television (modelNumber.trim()));
+								Television t = (Television) Electronics.delete (new Television (ModelNumber.trim()));
 								int response = JOptionPane.showConfirmDialog (null, t + "\nAre you sure you wish to delete this record?\n", "Confirm Delete?", JOptionPane.YES_NO_OPTION);
 								if (response == JOptionPane.YES_OPTION) {
 									try {

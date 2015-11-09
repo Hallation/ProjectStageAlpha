@@ -15,18 +15,19 @@ public abstract class Electronics implements Comparable<Electronics> {
 	protected int stock;
 	
 	/** The Model number. */
-	protected String BrandName,ModelNumber;
+	protected String BrandName, ModelNumber;
 	
 	/**
 	 * Instantiates a new electronics.
 	 */
 	public Electronics () {
+		ModelNumber = null;
+		BrandName = null;
 		price = 0;
 		stock = 0;
-		BrandName = null;
-		ModelNumber = null;
+		
+		
 	}
-	
 	
 	
 	/**
@@ -37,11 +38,14 @@ public abstract class Electronics implements Comparable<Electronics> {
 	 * @param pri the pri
 	 * @param stck the stck
 	 */
-	public Electronics (String bName, String mNumber, int pri, int stck){
+	public Electronics ( String mNumber, String bName, int pri, int stck){
+		
+		ModelNumber = mNumber;
+		BrandName = bName;
 		price = pri;
 		stock = stck;
-		BrandName = bName;
-		ModelNumber = mNumber;
+		
+		
 	}
 	
 	/**

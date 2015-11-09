@@ -79,14 +79,14 @@ public class DBAccess {
 				// extract the data
 			String ModelNumber = rs.getString(1);
 			String BrandName = rs.getString (2);
-			double price = rs.getDouble(3);
-			int stock = rs.getShort(4);
 			String modelName = rs.getString(5);
 			String YearOfRelease = rs.getString(6);
 			String OperatingSystem = rs.getString(7);
+			int price = rs.getShort(3);
+			int stock = rs.getShort(4);
 			
 				// create Employee instance & add it to the ArrayList
-			anElectronic = new Smartphone (ModelNumber, BrandName, (int) price, stock, modelName, YearOfRelease, OperatingSystem);
+			anElectronic = new Smartphone (ModelNumber, BrandName, price, stock, modelName, YearOfRelease, OperatingSystem);
 			electronics.add (anElectronic);
 			moreData = rs.next();
 		}
@@ -161,7 +161,7 @@ public class DBAccess {
 				rs.close();
 				throw (new NotFoundException ("not found "));
 			}
-		} else if (objectType.equalsIgnoreCase ("Student")) {
+		} else if (objectType.equalsIgnoreCase ("Television")) {
 				// code for processing Student goes here
 		}
 

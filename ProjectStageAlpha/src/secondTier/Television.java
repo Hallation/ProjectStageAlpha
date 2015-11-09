@@ -13,8 +13,9 @@ public class Television extends Electronics{
 	 * Instantiates a new television.
 	 * @param string 
 	 */
-	public Television (String tN) {
+	public Television (String mNu) {
 		super ();
+		ModelNumber = mNu;
 		ScreenSize = null;
 		Resolution = null;
 		ScreenType = null;
